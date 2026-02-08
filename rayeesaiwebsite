@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Photo Editor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AI Photo Editor</h1>
+  <p>Edit your photos with filters, text, and AI background removal</p>
+</header>
+
+<section class="editor">
+  <input type="file" id="upload" accept="image/*">
+  <input type="text" id="watermark" placeholder="Enter watermark text">
+  
+  <div class="filters">
+    <button onclick="applyFilter('grayscale')">Grayscale</button>
+    <button onclick="applyFilter('invert')">Invert</button>
+    <button onclick="applyFilter('brightness')">Brightness</button>
+    <button onclick="removeBackground()">AI Remove BG</button>
+  </div>
+  
+  <button onclick="downloadImage()">Download</button>
+  <canvas id="canvas"></canvas>
+</section>
+
+<section class="gallery">
+  <h2>Uploaded Photos (Server Gallery)</h2>
+  <div id="gallery"></div>
+</section>
+
+<script src="script.js"></script>
+<!-- Optional AI library -->
+<script src="libs/remove-bg.min.js"></script>
+</body>
+</html>
